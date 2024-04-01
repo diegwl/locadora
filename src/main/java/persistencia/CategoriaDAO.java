@@ -4,6 +4,9 @@ import entidades.Categoria;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class CategoriaDAO {
     public static boolean inserir(Categoria categoria) {
@@ -51,5 +54,23 @@ public class CategoriaDAO {
         } catch (Exception e) {
             return false;
         }
+    }
+    public static ArrayList<Categoria> listar() {
+        ArrayList<Categoria> categorias = new ArrayList<Categoria>();
+        try {
+            Connection con = Conexao.getConexao();
+            String sql = "SELECT * FROM categoria";
+            Statement query = con.createStatement();
+            ResultSet res = query.executeQuery(sql);
+            while (res.next()) {
+                Categoria c = new Categoria(res.getInt("id"), res.getString("nome"), res.getString("tipo").charAt(0));
+                categorias.add(c);
+            }
+            res.close();
+            query.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return categorias;
     }
 }
