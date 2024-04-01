@@ -32,9 +32,9 @@ public class CategoriaDAO {
             query.setString(1, categoria.getNome());
             query.setString(2, String.valueOf(categoria.getTipo()));
             query.setInt(3, categoria.getId());
-            query.execute();
+            int nLinhas = query.executeUpdate();
             query.close();
-            return true;
+            return nLinhas > 0;
         } catch (Exception e) {
             return false;
         }
