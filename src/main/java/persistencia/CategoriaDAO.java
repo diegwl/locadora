@@ -39,4 +39,17 @@ public class CategoriaDAO {
             return false;
         }
     }
+    public static boolean excluir(int id) {
+        try {
+            Connection con = Conexao.getConexao();
+            String sql = "DELETE FROM categoria WHERE id = ?";
+            PreparedStatement query = con.prepareStatement(sql);
+            query.setInt(1, id);
+            int nLinhas = query.executeUpdate();
+            query.close();
+            return nLinhas > 0;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
