@@ -35,6 +35,10 @@ public class Categoria {
         this.tipo = tipo;
     }
 
+    public String getNomeTipo() {
+        return tipo == 'F' ? "Filme" : "Jogo";
+    }
+
     @Override
     public String toString() {
         return "Categoria{" +

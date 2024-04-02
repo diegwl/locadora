@@ -20,7 +20,7 @@ public class TelaListaCategoria extends javax.swing.JFrame {
         for(Categoria cat : categorias) {
             Object[] linha = {
                     cat.getNome(),
-                    cat.getTipo()
+                    cat.getNomeTipo()
             };
 
             conteudo.addRow(linha);
