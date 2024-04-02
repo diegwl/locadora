@@ -34,4 +34,13 @@ public class Categoria {
     public void setTipo(char tipo) {
         this.tipo = tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", tipo=" + tipo +
+                '}';
+    }
 }
