@@ -11,6 +11,10 @@ public class Categoria {
         this.tipo = tipo;
     }
 
+    public Categoria() {
+
+    }
+
     public int getId() {
         return id;
     }
