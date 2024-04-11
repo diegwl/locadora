@@ -58,7 +58,6 @@ CREATE TABLE `filme` (
   `descricao` text DEFAULT NULL,
   `preco` decimal(15,2) NOT NULL,
   `numeroDias` int(11) NOT NULL,
-  `categoria` varchar(45) DEFAULT NULL,
   `categoria_id` int(11) NOT NULL,
   `diretor` varchar(45) NOT NULL,
   `duracao` int(11) NOT NULL
@@ -90,7 +89,7 @@ CREATE TABLE `jogo` (
   `descricao` text DEFAULT NULL,
   `preco` decimal(15,2) NOT NULL,
   `numeroDias` int(11) NOT NULL,
-  `categoria` varchar(45) DEFAULT NULL,
+  `categoria_id` int(11) NOT NULL,
   `memoria` int(11) DEFAULT NULL,
   `tipo` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
