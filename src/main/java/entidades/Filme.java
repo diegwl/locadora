@@ -4,14 +4,14 @@ public class Filme extends Item{
     private String diretor;
     private String duracao;
 
-    public Filme(int id, String titulo, String descricao, double preco, Categoria categoria, String diretor, String duracao) {
-        super(id, titulo, descricao, preco, categoria);
+    public Filme(int id, String titulo, String descricao, double preco, Categoria categoria, int numeroDias, String diretor, String duracao) {
+        super(id, titulo, descricao, preco, categoria, numeroDias);
         this.diretor = diretor;
         this.duracao = duracao;
     }
 
-    public Filme(int id, String titulo, String descricao, double preco, Categoria categoria) {
-        super(id, titulo, descricao, preco, categoria);
+    public Filme(int id, String titulo, String descricao, double preco, Categoria categoria, int numeroDias) {
+        super(id, titulo, descricao, preco, categoria, numeroDias);
     }
 
     public Filme(Categoria categoria) {

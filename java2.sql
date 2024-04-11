@@ -157,7 +157,8 @@ ALTER TABLE `itemlocacao`
 -- Índices para tabela `jogo`
 --
 ALTER TABLE `jogo`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_jogo_categoria` (`categoria_id`);
 
 --
 -- Índices para tabela `locacao`
@@ -228,6 +229,9 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `filme`
   ADD CONSTRAINT `fk_filme_categoria` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`);
+
+ALTER TABLE `jogo`
+  ADD CONSTRAINT `fk_jogo_categoria` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`);
 
 --
 -- Limitadores para a tabela `itemlocacao`
